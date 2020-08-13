@@ -1,21 +1,40 @@
 import random
 import string
 
-password_list = []
+
 ###user input###
-x = int(input("How many numbers and letters are there going to be? :"))
+x = int(input("How many numbers is there going to be? :"))
+y = int(input("How many letters are there going to be? :"))
+c = int(input("How many Capital letters are there going to be? :"))
 
-for i in range(0,x):
-    val_list = random.randint(0,10)
-    password_list.append(val_list)
-    
-    letters = string.ascii_lowercase
+###lists###
+letters_low = string.ascii_lowercase
+letters_up = string.ascii_uppercase
+var_list = []
+password_list = []
 
-    for x in range(0,x):
-        password_list.append(random.choice(letters))
+def password():
+  if x==0 and y==0 and c==0:
+    pass
+  for i in range(0,x):
+    if x==0:
+      pass
+    var_list.append(random.randrange(10))
 
-k = random.sample(password_list,len(password_list))
-k = [str(int) for int in k]
-k = "".join(k)
+  for i in range(0,y):
+    if y==0:
+      pass
+    password_list.append(random.choice(letters_low))
+  
+  for i in range(0,c):
+    if c==0:
+      pass
+    password_list.append(random.choice(letters_up))
+   
+password()
 
-print(k)
+password_list.extend(var_list)
+random.shuffle(password_list)
+password_list = [str(int) for int in password_list]
+password_list= "".join(password_list)
+print("Your password is {} !".format(password_list))
