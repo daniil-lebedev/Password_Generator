@@ -58,9 +58,8 @@ def checkPassword():
 """function to decide what user wants to do"""
 def start():
   print("Welcome user, what would u like to do?")
-  time.sleep(2)
   print("To check password type 1")
-  time.sleep(2)
+
   print("To create password type 2")
   taking_input = int(input("Type it here: "))
   
@@ -70,11 +69,4 @@ def start():
   else:
     takeInput()
 start()
-
-
-
-
-
-
-
 
